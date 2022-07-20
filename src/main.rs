@@ -132,40 +132,9 @@ impl MainState {
         points
     }
 
-    /*
-        pub fn draw_lines(&mut self,  ctx:&mut ggez::Context){
 
-
-
-
-            for i in 0..self.Cube.len(){
-                let  a=i+1;
-                if i+1==4{
-                    a=0;}
-                let points :[[f32;2];2]  =[[self.Cube[i][0],self.Cube[i][1]  ], [self.Cube[a][0], self.Cube[a][1] ] ] ;
-               let mesh = graphics::Mesh::new_line(ctx,&points,1.0,graphics::Color::WHITE);
-                //graphics::draw(ctx,&mesh,graphics::DrawParam::default())?;
-
-                graphics::draw(ctx, &mesh, graphics::DrawParam::default())?;
-            }
-    /*
-            for i in range(4,len(self.Cube)):{
-                let :i32 a=i+1
-                if i+1==8{
-                    a=4;}
-                pygame.draw.line(win,color,self.fcube[i],self.fcube[a])
-            }
-
-            for i in range(int(len(self.Cube)/2)):{
-                pygame.draw.line(win,color,self.fcube[i],self.fcube[i+4])
-            }
-        }*/
-
-
-    }*/
 }
 
-//impl graphics::Drawable for Result<graphics::Mesh,ggez::GameError>{}
 
 impl EventHandler<ggez::GameError> for MainState {
     fn update(&mut self, ctx: &mut ggez::Context) -> ggez::GameResult {
@@ -226,27 +195,7 @@ impl EventHandler<ggez::GameError> for MainState {
             graphics::draw(ctx, &linemesh, graphics::DrawParam::default())?;
 }
 
-/*
-        for item in self.Cube {
-            let x = make_rect(item[0], item[1]);
-            //magic numbers are window width half and heigth half this is to be changed when i
-            //fugure iut oit
-            let rect = graphics::Rect::new(
-                x.getx() + SCREENW / 2.0,
-                x.gety() + SCREENH / 2.0,
-                x.getw(),
-                x.geth(),
-            );
 
-            let mesh = graphics::Mesh::new_rectangle(
-                ctx,
-                graphics::DrawMode::fill(),
-                rect,
-                graphics::Color::BLACK,
-            )?;
-            graphics::draw(ctx, &mesh, graphics::DrawParam::default())?;
-        }
-*/
         graphics::present(ctx)?;
         Ok(())
     }
